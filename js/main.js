@@ -14,3 +14,16 @@ function ShowResult() {
     	triangleArea.innerText = TriangleArea(a,h);
 		}
 }
+
+function IsBigTriangle() {
+	var element = document.createElement('p');
+a = document.getElementById('a').value;
+h = document.getElementById('h').value;
+	
+	element.innerText = (TriangleArea(a,h) >= 20) ? 'Tirangle is big' : 'Tirangle is small';
+	ShowResult();
+	document.body.appendChild(element);
+}
+
+// initial value
+ShowResult();
