@@ -1,5 +1,5 @@
-# Zadanie_8_5
-Zadanie 8.5 Pole trójkąta
+# Zadanie_8_6
+Zadanie 8.6 Pole trójkąta
 
 Page:
-  https://martinproxy0.github.io/Zadanie_8_5/
+  https://martinproxy0.github.io/Zadanie_8_6/
