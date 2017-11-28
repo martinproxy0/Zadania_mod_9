@@ -11,18 +11,26 @@ function ShowResult() {
 			alert('Base or height isn\'t a number');
 			triangleArea.innerText = 'Try with number ;)';
 		} else {
-    	triangleArea.innerText = TriangleArea(a,h);
+			if (IsPositiveNumber(a) && IsPositiveNumber(h){
+				triangleArea.innerText = TriangleArea(a,h);
+			} else {
+				triangleArea.innerText = 'I need positive value of parameters';
+			}
 		}
 }
 
 function IsBigTriangle() {
 	var element = document.createElement('p');
-a = document.getElementById('a').value;
-h = document.getElementById('h').value;
+	a = document.getElementById('a').value;
+	h = document.getElementById('h').value;
 	
 	element.innerText = (TriangleArea(a,h) >= 20) ? 'Tirangle is big' : 'Tirangle is small';
 	ShowResult();
 	document.body.appendChild(element);
+}
+
+function IsPositiveNumber(number) {
+	(number > 0) ? true : false;
 }
 
 // initial value
