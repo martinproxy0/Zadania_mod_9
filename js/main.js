@@ -11,7 +11,7 @@ function ShowResult() {
 			alert('Base or height isn\'t a number');
 			triangleArea.innerText = 'Try with number ;)';
 		} else {
-			if (IsPositiveNumber(a) && IsPositiveNumber(h){
+			if (IsPositiveNumber(a) && IsPositiveNumber(h)){
 				triangleArea.innerText = TriangleArea(a,h);
 			} else {
 				triangleArea.innerText = 'I need positive value of parameters';
@@ -30,7 +30,7 @@ function IsBigTriangle() {
 }
 
 function IsPositiveNumber(number) {
-	(number > 0) ? true : false;
+	return (number > 0) ? true : false;
 }
 
 // initial value
