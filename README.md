@@ -1,5 +1,5 @@
-# Zadanie_9_1
-Zadanie 9.1 Pole trójkąta
+# Zadanie_9_2
+Zadanie 9.2 Tablice
 
 Page:
-  https://martinproxy0.github.io/Zadanie_9_1/
+  https://martinproxy0.github.io/Zadanie_9_2/
