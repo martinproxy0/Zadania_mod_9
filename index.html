@@ -8,15 +8,46 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form>
-        <label for="a">Base:</label>
-        <input type="text" id="a" value="2">
-        <label for="b">Height:</label>
-        <input type="text" id="h" value="1">
-    </form>
-    <p>Triangle field is equal to: <span id="result">0</span> m2</p>
-    <button onclick="ShowResult()">Update</button>	
-    <button onclick="IsBigTriangle()">Zadanie 9.1</button>
+    <div class="row">
+        <div class="half">
+            <div class="half">
+                <ul>
+                    <h3>Woman names</h3>
+                    <li>Ania</li>
+                    <li>Basia</li>
+                    <li>Kamila</li>
+                    <li>Justyna</li>
+                    <li>Ola</li>
+                </ul>
+            </div>
+            <div class="half">
+                <ul>
+                    <h3>Man names</h3>
+                    <li>Bartek</li>
+                    <li>Tomek</li>
+                    <li>Olek</li>
+                    <li>Maciek</li>
+                    <li>Michał</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul id="allNames">
+                    <h3>All names</h3>
+                </ul>
+            </div>
+        </div>
+        <div class="half">
+            <form>
+                <label for="a">Base:</label>
+                <input type="text" id="a" value="2">
+                <label for="b">Height:</label>
+                <input type="text" id="h" value="1">
+            </form>
+            <p>Triangle field is equal to: <span id="result">0</span> m2</p>
+            <button onclick="ShowResult()">Update</button>	
+            <button onclick="IsBigTriangle()">Zadanie 9.1</button>
+        </div>
+    </div>
     <!-- scripts -->
     <script src="js/main.js"></script>
 </body>
