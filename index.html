@@ -11,7 +11,7 @@
     <div class="row">
         <div class="half">
             <div class="half">
-                <ul>
+                <ul id="womanNames">
                     <h3>Woman names</h3>
                     <li>Ania</li>
                     <li>Basia</li>
@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div class="half">
-                <ul>
+                <ul id="menNames">
                     <h3>Man names</h3>
                     <li>Bartek</li>
                     <li>Tomek</li>
@@ -31,6 +31,7 @@
                 </ul>
             </div>
             <div class="row">
+                <button onclick="MergeLists('allNames','womanNames','menNames')">Get all names</button>
                 <ul id="allNames">
                     <h3>All names</h3>
                 </ul>

@@ -35,3 +35,30 @@ function IsPositiveNumber(number) {
 
 // initial value
 ShowResult();
+
+// exercise9.2
+function BuildTableFromList (listId) {
+	var list = document.getElementById(listId);
+	var items = list.getElementsByTagName('li');
+	var table = [], i;
+	for (i = 0; i < items.length; i++) {
+		table.push(items[i].textContent);
+	}
+	return table;
+}
+function AddListItems (out_listId, itemsTable) {
+	var list = document.getElementById(out_listId);
+	var i;
+
+	for (i = 0; i < itemsTable.length; i++) {
+		var item = document.createElement('li');
+		item.innerHTML = itemsTable[i];
+		list.appendChild(item);
+	}
+}
+function MergeLists (out_listId) {
+	var i;
+	for (i = 1; i < arguments.length; i++) {
+		AddListItems(out_listId,BuildTableFromList(arguments[i]));
+	}
+}
