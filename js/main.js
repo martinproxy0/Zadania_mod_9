@@ -51,9 +51,11 @@ function AddListItems (out_listId, itemsTable) {
 	var i;
 
 	for (i = 0; i < itemsTable.length; i++) {
-		var item = document.createElement('li');
-		item.innerHTML = itemsTable[i];
-		list.appendChild(item);
+		if (!IsNameExists(itemsTable[i],out_listId)) {
+			var item = document.createElement('li');
+			item.innerHTML = itemsTable[i];
+			list.appendChild(item);
+		}
 	}
 }
 function MergeLists (out_listId) {
@@ -61,4 +63,33 @@ function MergeLists (out_listId) {
 	for (i = 1; i < arguments.length; i++) {
 		AddListItems(out_listId,BuildTableFromList(arguments[i]));
 	}
+}
+function AddNewNameToList (in_nameId, out_listId) {
+	var name = document.getElementById(in_nameId);
+	var list = document.getElementById(out_listId);
+	var item = document.createElement('li');
+
+	if(!IsNameExists(name.value,out_listId) && name.value.length !== 0) {
+
+		item.innerHTML = name.value;
+		list.appendChild(item);
+	}
+}
+function DeleteNameFromList (in_nameId, out_listId) {
+	var name = document.getElementById(in_nameId);
+	var list = document.getElementById(out_listId);
+	var items = list.getElementsByTagName('li');
+	var table = BuildTableFromList( out_listId);
+	
+	if (IsNameExists(name.value,out_listId) && name.value.length !== 0) {
+		items[table.indexOf(name.value)].remove();
+	}
+}
+function IsNameExists (name, listId) {
+	var table = BuildTableFromList(listId);
+	
+	if (table.indexOf(name) === -1) {
+		return false;
+	}
+	return true;
 }

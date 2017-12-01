@@ -10,6 +10,7 @@
 <body>
     <div class="row">
         <div class="half">
+            <h3>Zadanie 9.2</h3>
             <div class="half">
                 <ul id="womanNames">
                     <h3>Woman names</h3>
@@ -31,6 +32,10 @@
                 </ul>
             </div>
             <div class="row">
+                <label for="newName">Add new name</label>
+                <input type="text" id="newName">
+                <button onclick="AddNewNameToList('newName','allNames')">Add name</button>
+                <button onclick="DeleteNameFromList('newName','allNames')">Delete name</button>
                 <button onclick="MergeLists('allNames','womanNames','menNames')">Get all names</button>
                 <ul id="allNames">
                     <h3>All names</h3>
@@ -38,6 +43,7 @@
             </div>
         </div>
         <div class="half">
+            <h3>Zadanie 9.1</h3>
             <form>
                 <label for="a">Base:</label>
                 <input type="text" id="a" value="2">
