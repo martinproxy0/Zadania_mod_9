@@ -1,5 +1,5 @@
-# Zadanie_9_2
-Zadanie 9.2 Tablice
+# Zadanie_9_3
+Zadanie 9.3
 
 Page:
-  https://martinproxy0.github.io/Zadanie_9_2/
+  
