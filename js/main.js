@@ -93,3 +93,14 @@ function IsNameExists (name, listId) {
 	}
 	return true;
 }
+function ChangeText(inTextId, newTextId) {
+	var element = document.getElementById(inTextId).outerText;
+	var dinosaur = document.getElementById(newTextId);
+	var item = document.createElement('p');
+		item.id = 'resultTriceratops';
+	item.innerText = element.toLowerCase().replace('velociraptor',dinosaur.value.toUpperCase()).slice(0,element.length/2);
+	
+	if (document.getElementById('resultTriceratops') === null) {
+		dinosaur.parentElement.appendChild(item);
+	}
+}
