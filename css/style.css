@@ -5,12 +5,19 @@ box-sizing: border-box;
 body {
     background-color: rgb(187, 187, 187);
 }
-
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .row {
     width: 100%;
 }
-
 .half {
     float: left;
     width: 50%;
+}
+#christmasTree {
+    text-align: center;
 }
