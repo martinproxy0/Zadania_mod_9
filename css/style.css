@@ -19,5 +19,6 @@ body {
     width: 50%;
 }
 #christmasTree {
+    min-height: 600px;
     text-align: center;
 }
