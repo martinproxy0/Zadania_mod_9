@@ -24,9 +24,10 @@ function IsBigTriangle() {
 	a = document.getElementById('a').value;
 	h = document.getElementById('h').value;
 	
-	element.innerText = (TriangleArea(a,h) >= 20) ? 'Tirangle is big' : 'Tirangle is small';
+	//element.innerText = (TriangleArea(a,h) >= 20) ? 'Tirangle is big' : 'Tirangle is small';
 	ShowResult();
-	document.body.appendChild(element);
+	//document.body.appendChild(element);
+	document.getElementById('whatTriangle').innerHTML = (TriangleArea(a,h) >= 20) ? 'Tirangle is big' : 'Tirangle is small';
 }
 
 function IsPositiveNumber(number) {
