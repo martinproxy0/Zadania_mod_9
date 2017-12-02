@@ -35,6 +35,7 @@ function IsPositiveNumber(number) {
 
 // initial value
 ShowResult();
+DrawTree();
 
 // exercise9.2
 function BuildTableFromList (listId) {
@@ -93,7 +94,7 @@ function IsNameExists (name, listId) {
 	}
 	return true;
 }
-function ChangeText(inTextId, newTextId) {
+function ChangeText (inTextId, newTextId) {
 	var element = document.getElementById(inTextId).outerText;
 	var dinosaur = document.getElementById(newTextId);
 	var item = document.createElement('p');
@@ -103,4 +104,26 @@ function ChangeText(inTextId, newTextId) {
 	if (document.getElementById('resultTriceratops') === null) {
 		dinosaur.parentElement.appendChild(item);
 	}
+}
+function DrawTree () {
+	var myVar = setInterval(myTimer, 2000);
+}
+function myTimer() {
+	var d = new Date(),
+		sec = d.getSeconds(),
+		n = 1,
+		char = '*',
+		outString = '';
+		(function drawStars(n){
+		if (!( n <= sec )) {
+			return (outString += (sec > 10) ? '***<br>***<br>' : '');
+		} else {
+			for (var i = n; i >= 1; i--) {
+			  outString += char;
+			};
+			outString += '<br>';
+			drawStars(n + 2);
+		};
+	})(n);
+	document.getElementById('christmasTree').innerHTML = outString;
 }
