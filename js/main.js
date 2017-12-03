@@ -4,6 +4,7 @@ window.onload = function() {
 	ShowResult();
 	Statistic();
 	DrawTree();
+	AddListenerToWindow();
 }
 
 function TriangleArea(a, h) {
@@ -153,5 +154,24 @@ function Statistic () {
 			default:
 			break;
 		}
+	}
+}
+function AddListenerToWindow() {
+	MyWidowSize ();
+	window.addEventListener('resize', function(){
+		MyWidowSize ();
+	});
+}
+function MyWidowSize () {
+	var modelString = document.getElementById('windowSizeTemplate').innerText;
+	modelString = modelString.replace('{%width%}',window.innerWidth);
+	modelString = modelString.replace('{%height%}',window.innerHeight);
+	var element = document.createElement('p');
+	element.setAttribute('id','windowSize');
+	element.innerText = modelString;
+	if(document.getElementById('windowSize') === null) {
+		document.getElementById('windowSizeTemplate').parentNode.append(element);
+	} else {
+		document.getElementById('windowSize').innerText = modelString;
 	}
 }

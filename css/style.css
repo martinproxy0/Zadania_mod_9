@@ -22,3 +22,6 @@ body {
     min-height: 600px;
     text-align: center;
 }
+#windowSizeTemplate {
+    display: none;
+}
