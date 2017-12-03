@@ -1,12 +1,18 @@
 // main script
-function TriangleArea(a, h) {
-    return a*h/2;
+window.onload = function() {
+	// initial value
+	ShowResult();
+	Statistic();
+	DrawTree();
 }
 
+function TriangleArea(a, h) {
+	return a*h/2;
+}
 function ShowResult() {
-    triangleArea = document.getElementById('result');
-    a = document.getElementById('a').value;
-    h = document.getElementById('h').value;
+	triangleArea = document.getElementById('result');
+	a = document.getElementById('a').value;
+	h = document.getElementById('h').value;
 		if (isNaN(a) || isNaN(h)) {
 			alert('Base or height isn\'t a number');
 			triangleArea.innerText = 'Try with number ;)';
@@ -18,7 +24,6 @@ function ShowResult() {
 			}
 		}
 }
-
 function IsBigTriangle() {
 	var element = document.createElement('p');
 	a = document.getElementById('a').value;
@@ -29,15 +34,9 @@ function IsBigTriangle() {
 	//document.body.appendChild(element);
 	document.getElementById('whatTriangle').innerHTML = (TriangleArea(a,h) >= 20) ? 'Tirangle is big' : 'Tirangle is small';
 }
-
 function IsPositiveNumber(number) {
 	return (number > 0) ? true : false;
 }
-
-// initial value
-ShowResult();
-DrawTree();
-
 // exercise9.2
 function BuildTableFromList (listId) {
 	var list = document.getElementById(listId);
@@ -50,9 +49,8 @@ function BuildTableFromList (listId) {
 }
 function AddListItems (out_listId, itemsTable) {
 	var list = document.getElementById(out_listId);
-	var i;
 
-	for (i = 0; i < itemsTable.length; i++) {
+	for (let i = 0; i < itemsTable.length; i++) {
 		if (!IsNameExists(itemsTable[i],out_listId)) {
 			var item = document.createElement('li');
 			item.innerHTML = itemsTable[i];
@@ -61,8 +59,7 @@ function AddListItems (out_listId, itemsTable) {
 	}
 }
 function MergeLists (out_listId) {
-	var i;
-	for (i = 1; i < arguments.length; i++) {
+	for (let i = 1; i < arguments.length; i++) {
 		AddListItems(out_listId,BuildTableFromList(arguments[i]));
 	}
 }
@@ -107,9 +104,9 @@ function ChangeText (inTextId, newTextId) {
 	}
 }
 function DrawTree () {
-	var myVar = setInterval(myTimer, 2000);
+	var myVar = setInterval(MyTimer, 2000);
 }
-function myTimer() {
+function MyTimer () {
 	var d = new Date(),
 		sec = d.getSeconds(),
 		n = 1,
@@ -119,12 +116,42 @@ function myTimer() {
 		if (!( n <= sec )) {
 			return (outString += (sec > 10) ? '***<br>***<br>' : '');
 		} else {
-			for (var i = n; i >= 1; i--) {
-			  outString += char;
+			for (let i = n; i >= 1; i--) {
+			outString += char;
 			};
 			outString += '<br>';
 			drawStars(n + 2);
 		};
 	})(n);
 	document.getElementById('christmasTree').innerHTML = outString;
+}
+function Statistic () {
+	var statisticCounter = document.getElementsByClassName('statistics');
+	for(let i = 1; i <= statisticCounter.length; i++) {
+		var bodyElements = document.getElementsByTagName('*');
+		var currentStatistic = document.getElementById('statistic' + i);
+		switch (i) {
+			case 1:
+				var bodyChilds = document.body.childElementCount;
+				currentStatistic.innerText = 'Body has ' + bodyChilds + ' elemetns.';
+			break;
+			case 2:
+				countElementsWithID	= bodyElements.length;
+				currentStatistic.innerText = 'All elements on site ' + countElementsWithID + '.';
+			break;
+			case 3:
+				let array = Array.from(bodyElements);
+				elementsWithID = 0;
+				array.map(function(node){
+					return (node.hasAttribute('id')) ? elementsWithID++ : '';
+				})
+				currentStatistic.innerText = elementsWithID + ' elements with set ID atrribute ';
+			break;
+			case 4:
+				currentStatistic.innerText = 'Buttons number is ' +  document.getElementsByTagName('button').length;
+			break;
+			default:
+			break;
+		}
+	}
 }
